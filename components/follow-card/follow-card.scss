@@ -4,7 +4,9 @@
     width: 20vw;
 
     .header {
+        color: #808080;
         padding: 20px 0px 20px 20px;
+        font-weight: 500;
     }
 
     .follow-card-list {
@@ -54,12 +56,12 @@
                 // width: 35%;
 
                 .name {
-                    font-size: 18px;
+                    font-size: 16px;
                     font-weight: 500;
                 }
 
                 .occupation {
-                    color: rgb(165, 164, 164);
+                    color: #a5a4a4;
                 }
 
                 p {

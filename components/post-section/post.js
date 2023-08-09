@@ -94,7 +94,7 @@ async function renderPost() {
         posts = JSON.parse(localStorage.getItem('posts')) || [];
         posts.unshift(post);
         localStorage.setItem('posts', JSON.stringify(posts));
-        $('#exampleModal').modal('hide');
+        $('#post-form-modal').modal('hide');
         renderPost();
     });
 }

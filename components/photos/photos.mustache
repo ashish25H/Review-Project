@@ -31,15 +31,15 @@
 
     <ul class='photo-list'>
         {{#photosArr}}
-        <li class='photo-list-item'>
+        {{! <li class='photo-list-item'> }}
             <img src="{{url}}" alt="{{title}}">
-        </li>
+        {{! </li> }}
         {{/photosArr}}
 
         {{#userPhotos}}
-        <li class='photo-list-item'>
+        {{! <li class='photo-list-item'> }}
             <img src="{{.}}" alt="image">
-        </li>
+        {{! </li> }}
         {{/userPhotos}}
     </ul>
 </section>

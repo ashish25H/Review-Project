@@ -11,5 +11,15 @@ async function renderNavbar() {
 
     document.getElementById('nav-component').innerHTML = Mustache.render(template, user);
 
+    $('.arrow-down').click(function() {
+        $('.logout-btn').toggle();
+    });
+
+    $('.logout-btn').click(function() {
+        location.reload();
+    });
+
 }
 renderNavbar();
+
+window.renderNavbar = renderNavbar;

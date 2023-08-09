@@ -11,12 +11,17 @@
     }
 
     .photo-list {
-        display: grid;
+        // display: inline;
         background-color: #ffffff;
         grid-template-columns: repeat(4, auto);
         padding: 20px;
         margin: 0px;
 
+        img {
+            width: 299px;
+            height: 200px;
+            margin-bottom: 2px;
+        }
         .photo-list-item {
             list-style: none;
 

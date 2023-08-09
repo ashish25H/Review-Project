@@ -1,7 +1,7 @@
 <section class="user-info-section">
     <div class="card">
         <div class="card-head">
-            <div class="heading">BASICE INFORMATION</div>
+            <div class="heading">BASIC INFORMATION</div>
             <div class="edit-icon" id="edit-btn"><i class="fa-sharp fa-solid fa-pen-to-square"></i></div>
         </div>
         <hr>
@@ -9,52 +9,53 @@
         <form action="#" id="basic-info-form" class='user-info-form'>
             <div class='lable-input-container'>
                 <label for="name">Full Name </label>
-                <input type="text" class="basice-info" name="name"  value="{{name}}" readonly>
+                <input type="text" class="basice-info"   value="{{name}}" readonly>
 
                 <div>
-                 <input type="text" class="form-control basice-info-edit" id="name" value="{{name}}">
+                 <input type="text" class="form-control basice-info-edit" id="name" name="name" value="{{name}}">
                  </div>
             </div>
 
             <div class='lable-input-container'>
                 <label for="gender">Gender </label>
-                <input type="text" class="basice-info" name="gender" value="{{gender}}" readonly>
+                <input type="text" class="basice-info" value="{{gender}}" readonly>
 
                 <div>
-                 <input type="text" class="form-control basice-info-edit" id="gender" value="{{gender}}">
+                 <input type="text" class="form-control basice-info-edit" id="gender" name="gender"  value="{{gender}}">
                  </div>
             </div>
 
             <div class='lable-input-container'>
-                <label for="DOB">Birth Date </label>
-                <input type="text" class="basice-info" name="DOB"  value="{{DOB}}" readonly>
+                <label for="dob">Birth Date </label>
+                <input type="text" class="basice-info"   value="{{dob}}" readonly>
 
                 <div>
-                 <input type="text" class="form-control basice-info-edit" id="dob" value="{{DOB}}">
+                 <input type="text" class="form-control basice-info-edit" id="dob" name="DOB" value="{{dob}}">
                  </div>
             </div>
 
             <div class='lable-input-container'>
                 <label for="martail-status">Marital Status </label>
-                <input type="text" class="basice-info" name="martail-status"  value="{{maritalStatus}}" readonly>
+                <input type="text" class="basice-info"   value="{{maritalStatus}}" readonly>
 
                 <div>
-                 <input type="text" class="form-control basice-info-edit" id="martail-status" value="{{maritalStatus}}">
+                 <input type="text" class="form-control basice-info-edit" id="martail-status" name="martail-status" value="{{maritalStatus}}">
                  </div>
             </div>
 
             <div class='lable-input-container'>
                 <label for="location">Location </label>
-                <input type="text" class="basice-info" name="location" value="{{location}}" readonly>
+                <input type="text" class="basice-info"  value="{{location}}" readonly>
 
                 <div>
-                 <input type="text" class="form-control basice-info-edit" id="location" value="{{location}}">
+                 <input type="text" class="form-control basice-info-edit" name="location" id="location" value="{{location}}">
                  </div>
             </div>
         </form>
 
         <div class="btn-container">
-            <button class="submit-btn" id="submit-basice-info-btn">Submit</button>
+            <button class="submit-btn btn btn-primary" id="submit-basice-info-btn">Submit</button>
+            <button type="button" class="cancle-btn btn btn-secondary" id='cancle-info-btn'>Cancle</button>
         </div>
     </div>
 
@@ -98,7 +99,8 @@
         </form>
 
         <div class="btn-container">
-            <button class="submit-btn" id="submit-work-info-btn">Submit</button>
+            <button class="submit-btn btn btn-primary" id="submit-work-info-btn">Submit</button>
+             <button type="button" class="cancle-btn btn btn-secondary" id='cancle-work-info-btn'>Cancle</button>
         </div>
     </div>
 </section>

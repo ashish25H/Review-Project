@@ -7,6 +7,7 @@ body #body {
 }
 body #body .page-heading {
   margin-bottom: 20px;
+  font-size: 30px;
 }
 
 .follow-card {
@@ -15,7 +16,9 @@ body #body .page-heading {
   width: 20vw;
 }
 .follow-card .header {
+  color: #808080;
   padding: 20px 0px 20px 20px;
+  font-weight: 500;
 }
 .follow-card .follow-card-list {
   padding: 0px;
@@ -57,11 +60,11 @@ body #body .page-heading {
   margin-right: 18px;
 }
 .follow-card .follow-card-list .follow-list-item .name-and-occupation .name {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
 }
 .follow-card .follow-card-list .follow-list-item .name-and-occupation .occupation {
-  color: rgb(165, 164, 164);
+  color: #a5a4a4;
 }
 .follow-card .follow-card-list .follow-list-item .name-and-occupation p {
   margin-bottom: 0px;
@@ -100,10 +103,11 @@ body #body .page-heading {
 }
 .friend-card-container .friend-card-list .friend-card-list-item .img-text-container .friend-card-img {
   padding: 10px;
+  width: 135px;
 }
 .friend-card-container .friend-card-list .friend-card-list-item .img-text-container .friend-card-title {
-  font-size: 30px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 500;
 }
 .friend-card-container .friend-card-list .friend-card-list-item .img-text-container .friend-card-occupation {
   font-size: 18px;
@@ -139,30 +143,34 @@ body #body .page-heading {
   width: 60px;
   margin: 10px 0px 10px 10px;
 }
-
 .login-form-container {
   align-items: center;
-  background-color: aquamarine;
-  height: 100vh;
+  background-color: #259cf1;
   display: flex;
+  height: 100vh;
   scroll-behavior: auto;
   justify-content: center;
 }
 .login-form-container .login-form {
-  background-color: bisque;
+  background-color: #fcfcfc;
   border-radius: 10px;
   padding: 30px 40px;
+  width: 25vw;
 }
-.login-form-container .login-form #exampleInputEmail1-error {
+.login-form-container .login-form #input-email-error {
   color: red;
   margin-top: 5px;
 }
-.login-form-container .login-form #exampleInputPassword1-error {
+.login-form-container .login-form #input-password-error {
   color: red;
   margin-top: 5px;
 }
 .login-form-container .login-form .form-btn {
   text-align: center;
+}
+.login-form-container .login-form .form-btn .login-btn {
+  background-color: #259cf1;
+  border: none;
 }
 
 .navbar {
@@ -218,6 +226,13 @@ body #body .page-heading {
   margin-right: 10px;
 }
 
+.navbar .nav-icons .person-details .logout-btn {
+  display: none;
+  position: absolute;
+  top: 12vh;
+  right: 1vw;
+}
+
 
 .photos-section {
   position: absolute;
@@ -231,11 +246,15 @@ body #body .page-heading {
   margin-bottom: 40px;
 }
 .photos-section .photo-list {
-  display: grid;
   background-color: #ffffff;
   grid-template-columns: repeat(4, auto);
   padding: 20px;
   margin: 0px;
+}
+.photos-section .photo-list img {
+  width: 299px;
+  height: 200px;
+  margin-bottom: 2px;
 }
 .photos-section .photo-list .photo-list-item {
   list-style: none;
@@ -375,7 +394,7 @@ body #body .page-heading {
 
 .card-container {
   position: absolute;
-  top: 240px;
+  top: 22vh;
   width: 20vw;
 }
 .card-container .card-text {
@@ -388,8 +407,9 @@ body #body .page-heading {
 .card-container .card-text .followers-info div {
   margin: 20px 10px 0 10px;
 }
-.card-container .card-text .followers-info div h3 {
+.card-container .card-text .followers-info div .number {
   color: #259cf1;
+  font-size: 20px;
 }
 .card-container .card-text .card-btn {
   background-color: #ffffff;
@@ -448,10 +468,10 @@ body #body .page-heading {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 15px;
 }
 .user-info-section .card .card-head .heading {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   color: gray;
 }
@@ -477,7 +497,7 @@ body #body .page-heading {
   margin: 10px 0 10px 10px;
 }
 .user-info-section .card .user-info-form .lable-input-container label {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
   width: 50%;
 }
@@ -486,7 +506,7 @@ body #body .page-heading {
   border: none;
   color: #919090;
   float: right;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   outline: none;
   width: 50%;
@@ -500,14 +520,8 @@ body #body .page-heading {
   margin-bottom: 25px;
   text-align: center;
 }
-.user-info-section .card .btn-container .submit-btn {
-  border: 1px solid #808080;
-  background-color: #ffffff;
-  color: #808080;
+.user-info-section .card .btn-container .submit-btn, .user-info-section .card .btn-container .cancle-btn {
   display: none;
-  font-size: 19px;
-  margin: 20px 0 0 10px;
-  padding: 8px 40px;
 }
 
 /*# sourceMappingURL=main-style.css.map */

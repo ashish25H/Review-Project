@@ -30,7 +30,7 @@
                 <input type="text" class="basice-info"   value="{{dob}}" readonly>
 
                 <div>
-                 <input type="text" class="form-control basice-info-edit" id="dob" name="DOB" value="{{dob}}">
+                 <input type="text" class="form-control basice-info-edit" id="dob" name="dob" value="{{dob}}">
                  </div>
             </div>
 
@@ -51,12 +51,12 @@
                  <input type="text" class="form-control basice-info-edit" name="location" id="location" value="{{location}}">
                  </div>
             </div>
-        </form>
 
-        <div class="btn-container">
-            <button class="submit-btn btn btn-primary" id="submit-basice-info-btn">Submit</button>
-            <button type="button" class="cancle-btn btn btn-secondary" id='cancle-info-btn'>Cancle</button>
-        </div>
+            <div class="btn-container">
+             <button class="submit-btn btn btn-primary" id="submit-basice-info-btn">Submit</button>
+             <button type="button" class="cancle-btn btn btn-secondary" id='cancle-info-btn'>Cancle</button>
+            </div>
+        </form>
     </div>
 
     <div class="card-separator"></div>
@@ -68,39 +68,38 @@
         </div>
         <hr>
 
-        <form action="#" class='user-info-form'>
+        <form action="#" class='user-info-form' id='work-info-form'>
             <div class='lable-input-container'>
                 <label for="occupation">Occupation </label>
-                <input type="text" name="name" class="work-info"  value="{{occupation}}" readonly>
+                <input type="text" class="work-info"  value="{{occupation}}" readonly>
 
                 <div>
-                 <input type="text" class="form-control work-info-edit" id="occupation" value="{{occupation}}">
+                 <input type="text" class="form-control work-info-edit" id="occupation" name='occupation' value="{{occupation}}">
                  </div>
             </div>
 
             <div class='lable-input-container'>
                 <label for="skills">Skills </label>
-                <input type="text" class="work-info" name="skills" value="{{skills}}" readonly>
+                <input type="text" class="work-info" value="{{skills}}" readonly>
 
                 <div>
-                 <input type="text" class="form-control work-info-edit" id="skills" value="{{skills}}">
+                 <input type="text" class="form-control work-info-edit" id="skills" name="skills" value="{{skills}}">
                  </div>
             </div>
 
             <div class='lable-input-container'>
                 <label for="jobs">Jobs </label>
-                <input type="text" class="work-info" name="jobs" value="{{jobs}}" readonly>
+                <input type="text" class="work-info"  value="{{jobs}}" readonly>
 
                 <div>
-                 <input type="text" class="form-control work-info-edit" id="jobs" value="{{jobs}}">
+                 <input type="text" class="form-control work-info-edit" id="jobs" name="jobs" value="{{jobs}}">
                  </div>
             </div>
 
-        </form>
-
-        <div class="btn-container">
-            <button class="submit-btn btn btn-primary" id="submit-work-info-btn">Submit</button>
+            <div class="btn-container">
+             <button class="submit-btn btn btn-primary" id="submit-work-info-btn">Submit</button>
              <button type="button" class="cancle-btn btn btn-secondary" id='cancle-work-info-btn'>Cancle</button>
-        </div>
+            </div>
+        </form>
     </div>
 </section>

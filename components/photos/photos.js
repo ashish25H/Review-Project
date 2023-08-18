@@ -11,12 +11,6 @@ async function renderPhotoSection() {
     template = Mustache.render(template, photo);
     $('#section-container').html(template);
 
-    // if(photos || addedUserPhotos){
-    //     $(".photo-list").css('padding', '20px');
-    // }else{
-    //     $(".photo-list").css('padding', '0');
-    // }
-
     $("#add-photo-btn").click(function () {
         let photoUrl = $('#photo-url').val();
         let userPhotos = JSON.parse(localStorage.getItem('userPhotos')) || [];
@@ -24,7 +18,7 @@ async function renderPhotoSection() {
             userPhotos.push(photoUrl);
         }
         localStorage.setItem('userPhotos', JSON.stringify(userPhotos));
-        $('#exampleModal').modal('hide');
+        $('#photo-form-modal').modal('hide');
         renderPhotoSection();
     });
 }

@@ -6,9 +6,36 @@ body {
         padding: 0px 20px;
         position: relative;
 
-        .page-heading{
+        .page-heading {
             margin-bottom: 20px;
             font-size: 30px;
+        }
+
+        .follow-friend-card-container {
+            position: absolute;
+            top: 85vh;
+        }
+    }
+}
+
+@media (min-width: 300px) and (max-width: 767px) {
+    body {
+        #body {
+            .follow-friend-card-container {
+                position: static;
+                top: 83vh;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    body {
+        #body {
+            .follow-friend-card-container {
+                position: absolute;
+                top: 78vh;
+            }
         }
     }
 }

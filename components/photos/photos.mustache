@@ -2,13 +2,13 @@
 
     <!-- Button trigger modal -->
     <div class="add-photo-btn">
-        <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#photo-form-modal">
             Add Photo
         </button>
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="photo-form-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -31,15 +31,11 @@
 
     <ul class='photo-list'>
         {{#photosArr}}
-        {{! <li class='photo-list-item'> }}
             <img src="{{url}}" alt="{{title}}">
-        {{! </li> }}
         {{/photosArr}}
 
         {{#userPhotos}}
-        {{! <li class='photo-list-item'> }}
             <img src="{{.}}" alt="image">
-        {{! </li> }}
         {{/userPhotos}}
     </ul>
 </section>

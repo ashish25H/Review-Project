@@ -18,6 +18,4 @@ async function renderProfileCard() {
 }
 
 renderProfileCard();
-
-// export default renderProfileCard;
 window.renderProfileCard = renderProfileCard;

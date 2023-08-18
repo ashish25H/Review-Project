@@ -7,46 +7,6 @@ async function renderUserInfoCard() {
     template = Mustache.render(template, presentUser);
     $('#section-container').html(template);
 
-    $('#basic-info-form').validate({
-        rules : {
-            name : {
-                required: true,
-            },
-            gender : {
-                required: true,
-                minlength: 1,
-            },
-            dob : {
-                required: true,
-            },
-            ['martail-status'] : {
-                required : true,
-            },
-            location : {
-                required : true,
-            },
-
-        },
-        messages : {
-            name : {
-                required: 'Please enter name',
-            },
-            gender : {
-                required: 'Please enter your gender',
-                minlength: 'At least one letter',
-            },
-            dob : {
-                required: 'Please enter date of birth',
-            },
-            ['martail-status'] : {
-                required : 'Please enter martail-status',
-            },
-            location : {
-                required : 'Please enter your location',
-            }
-        }
-    });
-
     $('#edit-btn').click(function () {
         $('.basice-info-edit').show();
         $('.basice-info').hide();
@@ -66,6 +26,8 @@ async function renderUserInfoCard() {
         $('.basice-info').show();
         $('#submit-basice-info-btn').hide();
         $('#cancle-info-btn').hide();
+        $('.error').hide();
+        renderUserInfoCard();
     })
 
     $('#cancle-work-info-btn').click(function () {
@@ -73,39 +35,107 @@ async function renderUserInfoCard() {
         $('.work-info').show();
         $('#submit-work-info-btn').hide();
         $('#cancle-work-info-btn').hide();
+        $('.error').hide();
+        renderUserInfoCard();
     })
 
-    $('#submit-basice-info-btn').click(function () {
-        let name = $('#name').val();
-        let gender = $('#gender').val();
-        let dob = $('#dob').val();
-        let maritalStatus = $('#martail-status').val();
-        let location = $('#location').val();
+    $('#basic-info-form').validate({
+        rules: {
+            name: {
+                required: true,
+            },
+            gender: {
+                required: true,
+                minlength: 1,
+            },
+            dob: {
+                required: true,
+            },
+            ['martail-status']: {
+                required: true,
+            },
+            location: {
+                required: true,
+            },
+        },
+        messages: {
+            name: {
+                required: 'Please enter name',
+            },
+            gender: {
+                required: 'Please enter your gender',
+                minlength: 'At least one letter',
+            },
+            dob: {
+                required: 'Please enter date of birth',
+            },
+            ['martail-status']: {
+                required: 'Please enter martail-status',
+            },
+            location: {
+                required: 'Please enter your location',
+            }
+        },
+        submitHandler: function (form) {
+            let name = $('#name').val();
+            let gender = $('#gender').val();
+            let dob = $('#dob').val();
+            let maritalStatus = $('#martail-status').val();
+            let location = $('#location').val();
 
-        presentUser.name = name;
-        presentUser.gender = gender;
-        presentUser.dob = dob;
-        presentUser.maritalStatus = maritalStatus;
-        presentUser.location = location;
+            presentUser.name = name;
+            presentUser.gender = gender;
+            presentUser.dob = dob;
+            presentUser.maritalStatus = maritalStatus;
+            presentUser.location = location;
 
-        localStorage.setItem('currentUser', JSON.stringify(presentUser));
-        renderUserInfoCard();
-        window.renderNavbar();
-        window.renderProfileCard();
+            localStorage.setItem('currentUser', JSON.stringify(presentUser));
+            renderUserInfoCard();
+            window.renderNavbar();
+            window.renderProfileCard();
+
+            return false;
+        }
     });
 
-    $('#submit-work-info-btn').click(function () {
-        let occupation = $('#occupation').val();
-        let skills = $('#skills').val();
-        let jobs = $('#jobs').val();
+    $('#work-info-form').validate({
+        rules: {
+            occupation: {
+                required: true,
+            },
+            skills: {
+                required: true,
+            },
+            jobs: {
+                required: true,
+            },
+        },
+        messages: {
+            occupation: {
+                required: 'Please enter occupation',
+            },
+            skills: {
+                required: 'Please enter your skills',
+            },
+            jobs: {
+                required: 'Please enter job number',
+            },
+        },
+        submitHandler: function (form) {
+            let occupation = $('#occupation').val();
+            let skills = $('#skills').val();
+            let jobs = $('#jobs').val();
+    
+            presentUser.occupation = occupation;
+            presentUser.skills = skills;
+            presentUser.jobs = jobs;
+    
+            localStorage.setItem('currentUser', JSON.stringify(presentUser));
+            renderUserInfoCard();
+            window.renderProfileCard();
 
-        presentUser.occupation = occupation;
-        presentUser.skills = skills;
-        presentUser.jobs = jobs;
-
-        localStorage.setItem('currentUser', JSON.stringify(presentUser));
-        renderUserInfoCard();
-        window.renderProfileCard();
+            return false;
+        }
     });
 }
 

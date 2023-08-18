@@ -1,5 +1,4 @@
 .friend-card-container {
-    // display: grid;
     position: absolute;
     left: 360px;
     top: 600px;
@@ -7,8 +6,9 @@
 
     .friend-card-list {
         display: grid;
-        grid-template-columns: repeat(2, auto);
+        grid-template-columns: repeat(2, 580px);
         gap: 40px;
+        justify-content: center;
 
         .friend-card-list-item {
             align-items: center;
@@ -23,7 +23,7 @@
 
                 .friend-card-img {
                     padding: 10px;
-                    width: 135px;
+                    width: 160px;
                 }
 
                 .friend-card-title {
@@ -44,7 +44,7 @@
     .friend-card-container {
         position: absolute;
         left: 1vw;
-        top: 35vh;
+        top: 45vh;
         width: 90%;
 
         .friend-card-list {
@@ -58,12 +58,10 @@
                 list-style: none;
                 justify-content: center;
                 justify-items: center;
-                // width: 100%;
 
                 .img-text-container {
                     display: flex;
                     align-items: center;
-                    // background-color: black;
                     text-align: center;
 
                     .friend-card-img {

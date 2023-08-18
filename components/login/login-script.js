@@ -25,7 +25,7 @@ $('#login-form-template').validate({
     },
     messages: {
         email: {
-            required: 'Please Enter email',
+            required: 'Please enter email',
             email: 'Please enter correct email',
         },
         password: {
@@ -50,8 +50,7 @@ loginForm.addEventListener('submit', (event) => {
             $('#login-form').hide();
             $('#body-content').show();
         } else {
-            // alert('Invalid email or password');
-                $('#error-msg').text('Invalid email or password');
+            $('#error-msg').text('Invalid email or password');
         }
     }
 });

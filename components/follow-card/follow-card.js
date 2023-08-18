@@ -4,6 +4,9 @@ async function renderFollowCard() {
     let template = await response.text();
 
     let websiteUsers = JSON.parse(localStorage.getItem('users'));
+    if(websiteUsers.length === 0){
+        $('#follow-card').hide();
+    }
     let friends = [];
 
     let userData = {
@@ -19,17 +22,30 @@ async function renderFollowCard() {
             event.target.disabled = true;
             event.target.style.backgroundColor = '#8e8e8e';
             let addFriend = {
-                name : item.getAttribute('data-name'),
-                occupation : item.getAttribute('data-occupation'),
-                image : event.target.id,
+                name: item.getAttribute('data-name'),
+                occupation: item.getAttribute('data-occupation'),
+                image: event.target.id,
             }
             friends = JSON.parse(localStorage.getItem('friends'));
             friends.push(addFriend);
             localStorage.setItem('friends', JSON.stringify(friends));
 
+            let indexToDelete = websiteUsers.findIndex(obj => obj.name === item.getAttribute('data-name'));
+
+            if(indexToDelete != -1){
+                websiteUsers.splice(indexToDelete, 1);
+            }
+            localStorage.setItem('users', JSON.stringify(websiteUsers));
+            if(websiteUsers.length === 0){
+                $('#follow-card').hide();
+            }
+            renderFollowCard();
             window.renderFriendList();
             window.renderProfileCard();
-            // window.renderFriendCard();
+            let currentUrl = window.location.href;
+            if (currentUrl.includes('/friends')) {
+                window.renderFriendCard();
+            }
         });
     });
 }

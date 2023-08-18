@@ -53,7 +53,7 @@ $bs-info-edit-bg-color : #f5f5f5;
             display: flex;
             flex-direction: column;
             padding: 10px 30px 25px 30px;
-            width: 500px;
+            width: 631px;
 
             .lable-input-container {
                 display: flex;
@@ -64,6 +64,12 @@ $bs-info-edit-bg-color : #f5f5f5;
                     font-size: 16px;
                     font-weight: 600;
                     width: 50%;
+                }
+
+                .error {
+                    color: #ff0000;
+                    font-size: 10px;
+                    width: 100%;
                 }
 
                 .basice-info,
@@ -87,12 +93,14 @@ $bs-info-edit-bg-color : #f5f5f5;
         }
 
         .btn-container {
-            margin-bottom: 25px;
+            display: flex;
+            margin: 20px 0 25px 500px;
             text-align: center;
 
             .submit-btn,
             .cancle-btn {
                 display: none;
+                margin-right: 10px;
             }
         }
     }
@@ -129,15 +137,26 @@ $bs-info-edit-bg-color : #f5f5f5;
                         width: 50%;
                     }
 
-                    .basice-info-edit, .work-info-edit {
+                    .basice-info-edit,
+                    .work-info-edit {
                         background-color: $bs-info-edit-bg-color;
                         border: 1px solid $submit-btn-border;
                         display: none;
                     }
                 }
             }
+            .btn-container {
+                display: flex;
+                margin: 20px 0 25px 18vw;
+                text-align: center;
+        
+                .submit-btn,
+                .cancle-btn {
+                    display: none;
+                    margin-right: 10px;
+                }
+            }
         }
-
     }
 }
 
@@ -148,5 +167,23 @@ $bs-info-edit-bg-color : #f5f5f5;
         position: absolute;
         right: 20px;
         width: 74vw;
+
+        .card {
+            .user-info-form {
+                width: 67vw;
+            }
+
+            .btn-container {
+                display: flex;
+                margin: 20px 0 25px 18vw;
+                text-align: center;
+        
+                .submit-btn,
+                .cancle-btn {
+                    display: none;
+                    margin-right: 10px;
+                }
+            }
+        }
     }
 }

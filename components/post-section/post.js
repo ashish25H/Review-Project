@@ -22,44 +22,10 @@ function durationOfPost() {
     return days + " days ago";
 };
 
-
-
-$('#post-form').validate({
-    rules: {
-        ['img-url']: {
-            required: true,
-            url: true,
-        },
-        title: {
-            required: true,
-            minlength: 1,
-        },
-        description: {
-            required: true,
-            minlength: 10,
-        },
-    },
-    messages: {
-        ['img-url']: {
-            required: 'Please enter image url',
-            url: 'URL is not valid',
-        },
-        title: {
-            required: 'Please enter a title',
-            minlength: 'At least one letter',
-        },
-        description: {
-            required: 'Please enter description',
-            minlength: 'At least 10 letter',
-        }
-
-    }
-});
-
 async function renderPost() {
     let response = await fetch('components/post-section/post.mustache');
     let template = await response.text();
-    
+
     let posts = [];
     let post = JSON.parse(localStorage.getItem('posts'));
 
@@ -76,28 +42,67 @@ async function renderPost() {
     template = Mustache.render(template, postObj);
     $('#section-container').html(template);
 
-    $('#post-form').submit(function (e) {
-        e.preventDefault();
-        e.stopPropagation();
+    $('#post-form').validate({
+        rules: {
+            ['img-url']: {
+                required: true,
+                url: true,
+            },
+            title: {
+                required: true,
+                minlength: 1,
+            },
+            description: {
+                required: true,
+                minlength: 10,
+            },
+        },
+        messages: {
+            ['img-url']: {
+                required: 'Please enter image url',
+                url: 'URL is not valid',
+            },
+            title: {
+                required: 'Please enter a title',
+                minlength: 'At least one letter',
+            },
+            description: {
+                required: 'Please enter description',
+                minlength: 'At least 10 letter',
+            }
+        },
+        submitHandler: function (form) {
+            // Gather form data and perform any processing here
+            let url = $('#img-url').val();
+            let title = $('#title').val();
+            let description = $('#description').val();
 
-        let url = $('#img-url').val();
-        let title = $('#title').val();
-        let description = $('#description').val();
+            let durationOfPostFun = durationOfPost.toString();
+            const post = {
+                url,
+                title,
+                description,
+                postTime: new Date(),
+                durationOfPost: durationOfPostFun,
+            }
 
-        let durationOfPostFun = durationOfPost.toString();
-        const post = {
-            url,
-            title,
-            description,
-            postTime: new Date(),
-            durationOfPost: durationOfPostFun,
+            posts = JSON.parse(localStorage.getItem('posts')) || [];
+            posts.unshift(post);
+            localStorage.setItem('posts', JSON.stringify(posts));
+
+            // Clear form fields
+            $('#img-url').val('');
+            $('#title').val('');
+            $('#description').val('');
+
+            // Close modal or perform any other actions
+            $('#post-form-modal').modal('hide');
+
+            // Re-render posts
+            renderPost();
+
+            return false; // Prevent default form submission
         }
-
-        posts = JSON.parse(localStorage.getItem('posts')) || [];
-        posts.unshift(post);
-        localStorage.setItem('posts', JSON.stringify(posts));
-        $('#post-form-modal').modal('hide');
-        renderPost();
     });
 }
 export default renderPost;

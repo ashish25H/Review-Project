@@ -9,10 +9,25 @@ body #body .page-heading {
   margin-bottom: 20px;
   font-size: 30px;
 }
-
-.follow-card {
+body #body .follow-friend-card-container {
   position: absolute;
-  top: 87vh;
+  top: 85vh;
+}
+
+@media (min-width: 300px) and (max-width: 767px) {
+  body #body .follow-friend-card-container {
+    position: static;
+    top: 83vh;
+  }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  body #body .follow-friend-card-container {
+    position: absolute;
+    top: 78vh;
+  }
+}
+.follow-card {
+  margin-top: 90px;
   width: 20vw;
 }
 .follow-card .header {
@@ -82,16 +97,10 @@ body #body .page-heading {
 @media (min-width: 300px) and (max-width: 767px) {
   .follow-card {
     margin: 25px 0;
-    position: static;
     width: 100%;
   }
 }
 @media (min-width: 768px) and (max-width: 1300px) {
-  .follow-card {
-    position: absolute;
-    top: 72vh;
-    width: 20vw;
-  }
   .follow-card .follow-card-list .follow-list-item {
     align-items: start;
     display: flex;
@@ -122,8 +131,9 @@ body #body .page-heading {
 }
 .friend-card-container .friend-card-list {
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(2, 580px);
   gap: 40px;
+  justify-content: center;
 }
 .friend-card-container .friend-card-list .friend-card-list-item {
   align-items: center;
@@ -138,7 +148,7 @@ body #body .page-heading {
 }
 .friend-card-container .friend-card-list .friend-card-list-item .img-text-container .friend-card-img {
   padding: 10px;
-  width: 135px;
+  width: 160px;
 }
 .friend-card-container .friend-card-list .friend-card-list-item .img-text-container .friend-card-title {
   font-size: 20px;
@@ -153,7 +163,7 @@ body #body .page-heading {
   .friend-card-container {
     position: absolute;
     left: 1vw;
-    top: 35vh;
+    top: 45vh;
     width: 90%;
   }
   .friend-card-container .friend-card-list {
@@ -207,8 +217,7 @@ body #body .page-heading {
   }
 }
 .friend-list-card {
-  position: absolute;
-  top: 140vh;
+  margin-top: 20px;
   width: 20vw;
 }
 .friend-list-card .friend-list-header {
@@ -220,13 +229,16 @@ body #body .page-heading {
   justify-content: space-between;
   padding: 18px 20px;
 }
-.friend-list-card .friend-list-header .see-more-btn {
+.friend-list-card .friend-list-header .see-more-btn, .friend-list-card .friend-list-header .see-less-btn {
   background-color: #259cf1;
   color: #ffffff;
   border: none;
   border-radius: 20px;
-  font-size: 15px;
+  font-size: 12px;
   padding: 2px 8px;
+}
+.friend-list-card .friend-list-header .see-less-btn {
+  display: none;
 }
 .friend-list-card .friend-list-separator {
   margin: 0px;
@@ -235,6 +247,13 @@ body #body .page-heading {
   width: 60px;
   margin: 10px 0px 10px 10px;
 }
+.friend-list-card .friends-images .extra-img {
+  display: none;
+}
+.friend-list-card .friends-images .four-friend-img {
+  margin: 10px 0px 10px 15px;
+}
+
 @media (min-width: 300px) and (max-width: 767px) {
   .friend-list-card {
     margin: 25px 0;
@@ -243,11 +262,6 @@ body #body .page-heading {
   }
 }
 @media (min-width: 768px) and (max-width: 1300px) {
-  .friend-list-card {
-    position: absolute;
-    top: 127vh;
-    width: 20vw;
-  }
   .friend-list-card .friend-list-header div {
     font-size: 12px;
   }
@@ -273,11 +287,11 @@ body #body .page-heading {
   width: 30vw;
 }
 .login-form-container .login-form #input-email-error {
-  color: red;
+  color: #ff0000;
   margin-top: 5px;
 }
 .login-form-container .login-form #input-password-error {
-  color: red;
+  color: #ff0000;
   margin-top: 5px;
 }
 .login-form-container .login-form .form-btn {
@@ -401,21 +415,16 @@ body #body .page-heading {
   height: 200px;
   margin-bottom: 2px;
 }
-.photos-section .photo-list .photo-list-item {
-  list-style: none;
-}
-.photos-section .photo-list .photo-list-item img {
-  width: 300px;
-  height: 200px;
-  margin-bottom: 2px;
-}
 
 @media (min-width: 300px) and (max-width: 767px) {
   .photos-section {
     position: absolute;
-    top: 35vh;
-    left: 10vw;
-    width: 85%;
+    top: 36vh;
+    left: 5vw;
+    width: 86%;
+  }
+  .photos-section .photo-list img {
+    width: 100%;
   }
 }
 @media (min-width: 768px) and (max-width: 860px) {
@@ -564,7 +573,7 @@ body #body .page-heading {
 @media (min-width: 300px) and (max-width: 767px) {
   .post-container {
     position: absolute;
-    top: 45vh;
+    top: 33vh;
     left: -5vw;
     width: 100%;
   }
@@ -773,7 +782,7 @@ body #body .page-heading {
   display: flex;
   flex-direction: column;
   padding: 10px 30px 25px 30px;
-  width: 500px;
+  width: 631px;
 }
 .user-info-section .card .user-info-form .lable-input-container {
   display: flex;
@@ -784,6 +793,11 @@ body #body .page-heading {
   font-size: 16px;
   font-weight: 600;
   width: 50%;
+}
+.user-info-section .card .user-info-form .lable-input-container .error {
+  color: #ff0000;
+  font-size: 10px;
+  width: 100%;
 }
 .user-info-section .card .user-info-form .lable-input-container .basice-info,
 .user-info-section .card .user-info-form .lable-input-container .work-info {
@@ -802,12 +816,14 @@ body #body .page-heading {
   display: none;
 }
 .user-info-section .card .btn-container {
-  margin-bottom: 25px;
+  display: flex;
+  margin: 20px 0 25px 500px;
   text-align: center;
 }
 .user-info-section .card .btn-container .submit-btn,
 .user-info-section .card .btn-container .cancle-btn {
   display: none;
+  margin-right: 10px;
 }
 
 @media (min-width: 300px) and (max-width: 767px) {
@@ -837,10 +853,21 @@ body #body .page-heading {
     outline: none;
     width: 50%;
   }
-  .user-info-section .card .user-info-form .lable-input-container .basice-info-edit, .user-info-section .card .user-info-form .lable-input-container .work-info-edit {
+  .user-info-section .card .user-info-form .lable-input-container .basice-info-edit,
+  .user-info-section .card .user-info-form .lable-input-container .work-info-edit {
     background-color: #f5f5f5;
     border: 1px solid #808080;
     display: none;
+  }
+  .user-info-section .card .btn-container {
+    display: flex;
+    margin: 20px 0 25px 18vw;
+    text-align: center;
+  }
+  .user-info-section .card .btn-container .submit-btn,
+  .user-info-section .card .btn-container .cancle-btn {
+    display: none;
+    margin-right: 10px;
   }
 }
 @media (min-width: 768px) and (max-width: 1200px) {
@@ -850,6 +877,19 @@ body #body .page-heading {
     position: absolute;
     right: 20px;
     width: 74vw;
+  }
+  .user-info-section .card .user-info-form {
+    width: 67vw;
+  }
+  .user-info-section .card .btn-container {
+    display: flex;
+    margin: 20px 0 25px 18vw;
+    text-align: center;
+  }
+  .user-info-section .card .btn-container .submit-btn,
+  .user-info-section .card .btn-container .cancle-btn {
+    display: none;
+    margin-right: 10px;
   }
 }
 

@@ -1,10 +1,14 @@
 <div class="card friend-list-card">
     <div class="friend-list-header">
         <div>FRIENDS</div>
-        <button class="see-more-btn">See more</button>
+        <button class="see-more-btn">See <span id='count'></span> more</button>
+        <button class="see-less-btn">See less</button>
     </div>
     <hr class='friend-list-separator'>
     <div class="friends-images">
+    {{#firstFourFriends}}
+    <img src="{{image}}" class='four-friend-img' alt="friend-image">
+    {{/firstFourFriends}}
         <div class='extra-img'>
         {{#arr}}
         <img src="{{image}}" alt="friend-image">

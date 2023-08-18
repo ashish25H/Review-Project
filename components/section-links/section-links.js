@@ -12,7 +12,6 @@ function hideCards() {
 }
 
 async function renderProfile() {
-
     try {
         let response = await fetch('components/section-links/section-links.mustache');
         let template = await response.text();
@@ -35,17 +34,17 @@ async function renderProfile() {
     });
 
     $('#timeline').click(function () {
-hideCards();
+        hideCards();
         renderPost();
     });
 
     $('#about').click(function () {
         let width = $('body').outerWidth();
-    if (width >= 300 && width <= 767) {
-        $('.card-container').show();
-        $('.follow-card').show();
-        $('.friend-list-card').show();
-    }
+        if (width >= 300 && width <= 767) {
+            $('.card-container').show();
+            $('.follow-card').show();
+            $('.friend-list-card').show();
+        }
         renderUserInfoCard();
     });
 

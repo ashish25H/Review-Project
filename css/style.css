@@ -7,6 +7,18 @@ body #body {
 }
 body #body .page-heading {
   margin-bottom: 20px;
+  font-size: 30px;
+}
+body #body .follow-friend-card-container {
+  position: absolute;
+  top: 83vh;
+}
+
+@media (min-width: 300px) and (max-width: 767px) {
+  #body .follow-friend-card-container {
+    position: static;
+    top: 83vh;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

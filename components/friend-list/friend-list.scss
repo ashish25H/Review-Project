@@ -1,6 +1,5 @@
 .friend-list-card{
-    position: absolute;
-    top: 140vh;
+    margin-top: 20px;
     width: 20vw;
 
     .friend-list-header{
@@ -12,13 +11,17 @@
         justify-content: space-between;
         padding: 18px 20px;
 
-        .see-more-btn{
+        .see-more-btn, .see-less-btn{
             background-color: #259cf1;
             color: #ffffff;
             border: none;
             border-radius: 20px;
-            font-size: 15px;
+            font-size: 12px;
             padding: 2px 8px;
+        }
+
+        .see-less-btn {
+            display: none;
         }
     }
 
@@ -32,8 +35,12 @@
             margin: 10px 0px 10px 10px;
         }
 
-        .extra-img{
-            // display: none;
+        .extra-img {
+            display: none;
+        }
+
+        .four-friend-img {
+            margin: 10px 0px 10px 15px;
         }
     }
 }
@@ -48,10 +55,6 @@
 
 @media (min-width: 768px) and (max-width: 1300px) {
     .friend-list-card {
-        position: absolute;
-        top: 127vh;
-        width: 20vw;
-
         .friend-list-header {
             div {
                 font-size: 12px;

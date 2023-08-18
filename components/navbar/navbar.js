@@ -16,7 +16,8 @@ async function renderNavbar() {
     });
 
     $('.logout-btn').click(function() {
-        location.reload();
+        window.renderLoginPage();
+        // window.location.reload();
     });
 
 }

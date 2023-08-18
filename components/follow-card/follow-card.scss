@@ -1,6 +1,5 @@
 .follow-card {
-    position: absolute;
-    top: 87vh;
+    margin-top: 90px;
     width: 20vw;
 
     .header {
@@ -85,23 +84,17 @@
 @media (min-width: 300px) and (max-width: 767px) {
     .follow-card {
         margin: 25px 0;
-        position: static;
         width: 100%;
     }
 }
 
 @media (min-width: 768px) and (max-width: 1300px) {
     .follow-card {
-        position: absolute;
-        top: 72vh;
-        width: 20vw;
-
         .follow-card-list {
             .follow-list-item {
                 align-items: start;
                 display: flex;
                 flex-direction: column;
-                // justify-content: space-between;
                 list-style: none;
                 padding: 18px 10px 0px 20px;
 
